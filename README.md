@@ -32,6 +32,24 @@ Rather than being a single static application, GUIA represents an iterative expl
 
 The project includes several scripts in the `scripts/` directory. Each script can be run independently.
 
+### Object Detection
+
+- **object_detection_prototype.py**: Basic object detection using YOLOv8.
+  ```
+  python scripts/object_detection_prototype.py --cam 0
+  ```
+
+- **object_detection_final.py**: Enhanced object detection with optimizations.
+  ```
+  python scripts/object_detection_final.py --cam 0 --model yolov8n.pt --conf 0.5
+  ```
+  Options:
+  - `--cam`: Camera index
+  - `--imgsz`: Image size for inference
+  - `--conf`: Confidence threshold
+  - `--model`: Path to YOLO model (tries candidates if not specified)
+  - `--no_preview`: Run without displaying preview
+
 ### Depth Mapping
 
 - **depth_map.py**: Generates a depth map from camera input using MiDaS.
@@ -50,23 +68,6 @@ The project includes several scripts in the `scripts/` directory. Each script ca
   ```
   Options: Similar to above, plus object detection parameters like `--conf` for confidence threshold.
 
-### Object Detection
-
-- **object_detection_prototype.py**: Basic object detection using YOLOv8.
-  ```
-  python scripts/object_detection_prototype.py --cam 0
-  ```
-
-- **object_detection_final.py**: Enhanced object detection with optimizations.
-  ```
-  python scripts/object_detection_final.py --cam 0 --model yolov8n.pt --conf 0.5
-  ```
-  Options:
-  - `--cam`: Camera index
-  - `--imgsz`: Image size for inference
-  - `--conf`: Confidence threshold
-  - `--model`: Path to YOLO model (tries candidates if not specified)
-  - `--no_preview`: Run without displaying preview
 
 ### Gemini Assistant
 
